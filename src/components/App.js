@@ -22,13 +22,17 @@ function App() {
   const [authors, setAuthors] = useState([]);
 
   // Fetch get
-  apiBooks().then((response) => {
-    setBooks(response);
-  });
+  useEffect(() => {
+    apiBooks().then((response) => {
+      setBooks(response);
+    });
+  }, []);
 
-  apiAuthors().then((responde) => {
-    setAuthors(responde);
-  });
+  useEffect(() => {
+    apiAuthors().then((responde) => {
+      setAuthors(responde);
+    });
+  }, []);
 
   // handler
   const handleNameBook = (value) => {

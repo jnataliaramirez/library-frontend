@@ -1,21 +1,22 @@
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import apiBooks from "../../../services/apiBooks";
 
-const DetailBookCard = (props) => {
+const DetailBookCard = () => {
   const { uuid } = useParams();
-  let book;
-  
-  const apiBooks = async () => {
-    const response = await fetch("http://localhost:4000/books");
-    const result_1 = await response.json();
-    console.log(result_1)
-    return result_1;
-  };
 
+  const [book, setBook] = useState(null);
 
-  apiBooks();
+  useEffect(() => {
+    apiBooks().then((response) => {
+      let book = response.find((item) => item.uuid.toString() === uuid);
+      setBook(book);
+    });
+  }, [uuid]);
 
-  // const book = props.books.find((item) => item.uuid.toString() === uuid);
+  if (!book) {
+    return <div>Cargando...⏳ </div>;
+  }
 
   return (
     <div className="card">
