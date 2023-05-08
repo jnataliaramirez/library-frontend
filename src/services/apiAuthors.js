@@ -1,9 +1,7 @@
-const apiAuthors = () => {
-  return fetch('http://localhost:4000/authors')
-    .then((response) => response.json())
-    .then((result) => {
-      return result;
-    });
+const apiAuthors = async () => {
+  const response = await fetch('http://localhost:4000/authors');
+  const result = await response.json();
+  return result;
 };
 
 export default apiAuthors;

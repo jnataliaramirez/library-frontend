@@ -1,9 +1,7 @@
-const apiBooks = () => {
-  return fetch('http://localhost:4000/books')
-    .then(response => response.json())
-    .then(result => {
-      return result;
-   });
+const apiBooks = async () => {
+  const response = await fetch('http://localhost:4000/books');
+  const result = await response.json();
+  return result;
 };
 
 export default apiBooks;

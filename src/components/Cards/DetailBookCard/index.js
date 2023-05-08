@@ -3,8 +3,19 @@ import { useParams } from "react-router-dom";
 
 const DetailBookCard = (props) => {
   const { uuid } = useParams();
+  let book;
+  
+  const apiBooks = async () => {
+    const response = await fetch("http://localhost:4000/books");
+    const result_1 = await response.json();
+    console.log(result_1)
+    return result_1;
+  };
 
-  const book = props.books.find((item) => item.uuid.toString() === uuid);
+
+  apiBooks();
+
+  // const book = props.books.find((item) => item.uuid.toString() === uuid);
 
   return (
     <div className="card">
