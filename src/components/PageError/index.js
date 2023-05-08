@@ -1,4 +1,4 @@
-const PageError = (props) => {
+const PageError = () => {
   return (
     <section className='main'>
       <h4 className='main__title'>Oh! Wrong Web Page 🥺</h4>

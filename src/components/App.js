@@ -1,13 +1,16 @@
 // libraries
-import { Route, Switch, useRouteMatch } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 // data
 import apiBooks from "../services/apiBooks";
 import apiAuthors from "../services/apiAuthors";
 import apiAuthor from "../services/apiAuthor";
 import apiBook from "../services/apiBook";
 // components
+import Header from "./Header";
 import Home from "./Home";
+import DetailBookCard from "./Cards/DetailBookCard";
+import Footer from "./Footer";
 
 function App() {
   // states variables
@@ -86,25 +89,38 @@ function App() {
     apiAuthor(newAuthor);
     setNewAuthor({ first_name: "", last_name: "" });
   };
+
   return (
     <>
-      <Home
-        books={books}
-        nameBook={nameBook}
-        authorBook={authorBook}
-        isbnBook={isbnBook}
-        handleNameBook={handleNameBook}
-        handleAuthorBook={handleAuthorBook}
-        handleIsbnBook={handleIsbnBook}
-        handleCreateBook={handleCreateBook}
-        handleUpdateBook={handleUpdateBook}
-        firstName={newAuthor.first_name}
-        lastName={newAuthor.last_name}
-        handleFirstName={handleFirstName}
-        handleLastName={handleLastName}
-        handleCreateAuthor={handleCreateAuthor}
-        authors={authors}
-      />
+      <Header />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              authors={authors}
+              books={books}
+              nameBook={nameBook}
+              authorBook={authorBook}
+              isbnBook={isbnBook}
+              handleNameBook={handleNameBook}
+              handleAuthorBook={handleAuthorBook}
+              handleIsbnBook={handleIsbnBook}
+              handleCreateBook={handleCreateBook}
+              handleUpdateBook={handleUpdateBook}
+              firstName={newAuthor.first_name}
+              lastName={newAuthor.last_name}
+              handleFirstName={handleFirstName}
+              handleLastName={handleLastName}
+              handleCreateAuthor={handleCreateAuthor}
+            />
+          }
+        />
+        <Route
+          path="/book/:uuid"
+          element={<DetailBookCard books={books} />}
+        ></Route>
+      </Routes>
       {/* <DetailBookCard /> */}
 
       {/* <Switch> */}
@@ -140,6 +156,7 @@ function App() {
           <PageError />
         </Route>
       </Switch> */}
+      <Footer />
     </>
   );
 }

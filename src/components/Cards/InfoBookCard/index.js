@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const InfoCard = (props) => {
+const InfoBookCard = (props) => {
   return (
     <Link to={`/book/${props.book.uuid}`}>
       <h4 className="library__card--book">{props.book.name}</h4>
@@ -9,4 +9,4 @@ const InfoCard = (props) => {
   );
 };
 
-export default InfoCard;
+export default InfoBookCard;
