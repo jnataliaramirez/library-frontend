@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import apiBooks from "../../../services/apiBooks";
+import apiBooks from "../../../services/getBooks";
+import getBook from "../../../services/getBook";
 
 const DetailBookCard = () => {
   const { uuid } = useParams();
-
   const [book, setBook] = useState(null);
 
   useEffect(() => {
-    apiBooks().then((response) => {
-      let book = response.find((item) => item.uuid.toString() === uuid);
-      setBook(book);
+    getBook(uuid).then((response) => {
+      setBook(response);
     });
   }, [uuid]);
 

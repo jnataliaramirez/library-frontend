@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 // data
-import apiBooks from "../services/apiBooks";
+import apiBooks from "../services/getBooks";
 import apiAuthors from "../services/apiAuthors";
 import apiAuthor from "../services/apiAuthor";
 import apiBook from "../services/apiBook";
@@ -26,13 +26,13 @@ function App() {
     apiBooks().then((response) => {
       setBooks(response);
     });
-  }, []);
+  }, [isbnBook]);
 
   useEffect(() => {
     apiAuthors().then((responde) => {
       setAuthors(responde);
     });
-  }, []);
+  }, [newAuthor]);
 
   // handler
   const handleNameBook = (value) => {
