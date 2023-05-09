@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import apiBooks from "../../../services/getBooks";
+import getBooks from "../../../services/getBooks";
 import getBook from "../../../services/getBook";
 
 const DetailBookCard = () => {

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 // data
-import apiBooks from "../services/getBooks";
+import getBooks from "../services/getBooks";
 import apiAuthors from "../services/apiAuthors";
 import apiAuthor from "../services/apiAuthor";
 import apiBook from "../services/apiBook";
@@ -23,7 +23,7 @@ function App() {
 
   // Fetch get
   useEffect(() => {
-    apiBooks().then((response) => {
+    getBooks().then((response) => {
       setBooks(response);
     });
   }, [isbnBook]);
