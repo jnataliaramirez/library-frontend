@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 // data
 import getBooks from "../services/getBooks";
-import apiAuthors from "../services/apiAuthors";
+import getAuthors from "../services/getAuthors";
 import apiAuthor from "../services/apiAuthor";
 import postBook from "../services/postBook";
 // components
@@ -29,7 +29,7 @@ function App() {
   }, [isbnBook]);
 
   useEffect(() => {
-    apiAuthors().then((responde) => {
+    getAuthors().then((responde) => {
       setAuthors(responde);
     });
   }, [newAuthor]);
