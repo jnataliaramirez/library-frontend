@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 // data
 import getBooks from "../services/getBooks";
 import getAuthors from "../services/getAuthors";
-import apiAuthor from "../services/apiAuthor";
+import postAuthor from "../services/postAuthor";
 import postBook from "../services/postBook";
 // components
 import Header from "./Header";
@@ -86,7 +86,7 @@ function App() {
   };
 
   const handleCreateAuthor = () => {
-    apiAuthor(newAuthor);
+    postAuthor(newAuthor);
     setNewAuthor({ first_name: "", last_name: "" });
   };
 
