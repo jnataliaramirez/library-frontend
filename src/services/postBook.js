@@ -1,4 +1,4 @@
-const apiBook = async (newBook) => {
+const postBook = async (newBook) => {
   try {
     const response = await fetch("http://localhost:4000/book", {
       method: "POST",
@@ -14,4 +14,4 @@ const apiBook = async (newBook) => {
   }
 };
 
-export default apiBook;
+export default postBook;

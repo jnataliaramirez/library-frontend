@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import getBooks from "../services/getBooks";
 import apiAuthors from "../services/apiAuthors";
 import apiAuthor from "../services/apiAuthor";
-import apiBook from "../services/apiBook";
+import postBook from "../services/postBook";
 // components
 import Header from "./Header";
 import Home from "./Home";
@@ -54,7 +54,7 @@ function App() {
       isbn: isbnBook,
     };
 
-    apiBook(newBook);
+    postBook(newBook);
 
     setNameBook("");
     setAuthorBook([0]);
