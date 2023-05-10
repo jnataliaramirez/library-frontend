@@ -28,6 +28,7 @@ const Home = (props) => {
           <div className="form-wrap">
             <FormNewBook
               nameBook={props.nameBook}
+              authors={props.authors}
               authorBook={props.authorBook}
               isbnBook={props.isbnBook}
               handleNameBook={props.handleNameBook}
@@ -35,7 +36,6 @@ const Home = (props) => {
               handleIsbnBook={props.handleIsbnBook}
               handleCreateBook={props.handleCreateBook}
               handleUpdateBook={props.handleUpdateBook}
-              authors={props.authors}
             />
             <FormCreateAuthor
               firstName={props.firstName}

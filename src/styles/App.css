@@ -44,8 +44,6 @@
   }
 }
 
-
-
 /* Components  */
 .btn {
   font-size    : 16px;
@@ -123,7 +121,6 @@
   }
 }
 
-
 .library__card {
   display         : flex;
   flex-direction  : column;
@@ -152,7 +149,6 @@
   background-color: #A239EA;
 }
 
-
 /* Forms  */
 .form {
   display        : flex;
@@ -172,7 +168,6 @@
     margin: 28px;
   }
 }
-
 
 .form__title {
   margin-top    : 16px;
