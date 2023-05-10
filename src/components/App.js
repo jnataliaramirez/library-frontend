@@ -121,41 +121,6 @@ function App() {
           element={<DetailBookCard books={books} />}
         ></Route>
       </Routes>
-      {/* <DetailBookCard /> */}
-
-      {/* <Switch> */}
-      {/* <Route path='/book/:uuid'>
-          <Header />
-          <DetailBookCard book={getRouteBook()} /> 
-          <Footer />
-        </Route> */}
-
-      {/* <Route exact path='/'> */}
-      {/* <Header />
-          <Main
-            books={books}
-            nameBook={nameBook}
-            authorBook={authorBook}
-            isbnBook={isbnBook}
-            handleNameBook={handleNameBook}
-            handleAuthorBook={handleAuthorBook}
-            handleIsbnBook={handleIsbnBook}
-            handleCreateBook={handleCreateBook}
-            handleUpdateBook={handleUpdateBook}
-            firstName={newAuthor.first_name}
-            lastName={newAuthor.last_name}
-            handleFirstName={handleFirstName}
-            handleLastName={handleLastName}
-            handleCreateAuthor={handleCreateAuthor}
-            authors={authors}
-          />
-          <Footer /> */}
-      {/* </Route> */}
-
-      {/* <Route>
-          <PageError />
-        </Route>
-      </Switch> */}
       <Footer />
     </>
   );
